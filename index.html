@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap css cdn -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  <!-- bootstrap js cdn -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Marco</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Marco - Gorila Serpente</h1>
+      <nav>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="ficha-tab" data-toggle="tab" href="#ficha" role="tab" aria-controls="ficha" aria-selected="true">Ficha</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="itens-tab" data-toggle="tab" href="#itens" role="tab" aria-controls="itens" aria-selected="false">Itens</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="backstory-tab" data-toggle="tab" href="#backstory" role="tab" aria-controls="backstory" aria-selected="false">Passado</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="ficha" role="tabpanel" aria-labelledby="home-tab">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-5">
+                <div class="card profile-card">
+                  <img src="./img/Yoh.jpg" class="card-img-top profile-pic" alt="Marco - Gorila Serpente">
+                  <div class="card-body">
+                    <ul class="profile-ul">
+                      <li><strong>Nome:</strong>Marco</li>
+                      <li><strong>Raça: </strong>Humano</li>
+                      <li><strong>Gênero: </strong>Homem</li>
+                      <li><strong>Idade: </strong>28</li>
+                      <li><strong>Peso: </strong>87 kg</li>
+                      <li><strong>Altura: </strong>1,68 m</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-10" id="atributos">
+
+                <div class="card hp-card">
+                  <h2 class="card-header text-center">HP</h2>
+
+                  <div class="d-flex justify-content-between hp-flex">
+
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button type="button" class="btn btn-danger" onclick="damage(10)">-10</button>
+                      <button type="button" class="btn btn-danger" onclick="damage(5)">-5</button>
+                      <button type="button" class="btn btn-danger" onclick="damage(1)">-1</button>
+                    </div>
+                    
+                    <div class="total text-center"></div>
+
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button type="button" class="btn btn-success" onclick="heal(1)">+1</button>
+                      <button type="button" class="btn btn-success" onclick="heal(5)">+5</button>
+                      <button type="button" class="btn btn-success" onclick="heal(10)">+10</button>
+                    </div>
+                    
+                  </div>
+                  
+                        <div class="health-box">
+                          <div class="health-bar-red"></div>
+                          <div class="health-bar-blue"></div>
+                          <div class="health-bar"></div>
+                          <div class="health-bar-text text-center"></div>
+                        </div>
+
+                </div>
+                <div class="card att-card">
+
+                  <h2 class="card-header text-center">Atributos</h2>
+                  <div class="att-list">
+                    
+                    <div class="row" id="atributos-header">
+                      <div class="col-3"></div>
+                      <div class="col-2 text-center"><strong>Valor</strong></div>
+					  <div class="col-2 text-center"><strong>Raça</strong></div>
+					  <div class="col-1 text-center"><strong>Exo</strong></div>
+                      <div class="col-2 text-center"><strong>Mod 1</strong></div>
+                      <div class="col-2 text-center"><strong>Mod 2</strong></div>
+                    </div>
+                    <div class="att-items">
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Força</strong></div>
+                        <div class="col-2 text-center">11</div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">3</div>
+                        <div class="col-2 text-center">2</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Agilidade</strong></div>
+                        <div class="col-2 text-center">10</div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">3</div>
+                        <div class="col-2 text-center">2</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Destreza</strong></div>
+                        <div class="col-2 text-center">12</div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">4</div>
+                        <div class="col-2 text-center">3</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Carisma+</strong></div>
+                        <div class="col-2 text-center">7</div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">2</div>
+                        <div class="col-2 text-center">1</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Carisma-</strong></div>
+                        <div class="col-2 text-center">3</div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">1</div>
+                        <div class="col-2 text-center">0</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Lábia</strong></div>
+                        <div class="col-2 text-center">10</div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">1</div>
+                        <div class="col-2 text-center">0</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Inteligência</strong></div>
+                        <div class="col-2 text-center">11</div>
+						<div class="col-2 text-center">+4</div>
+						<div class="col-1 text-center">+6</div>
+                        <div class="col-2 text-center">7</div>
+                        <div class="col-2 text-center">5</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Sorte</strong></div>
+                        <div class="col-2 text-center">7</div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">2</div>
+                        <div class="col-2 text-center">1</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Resistência</strong></div>
+                        <div class="col-2 text-center"><span id="resistencia">10</span></div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">3</div>
+                        <div class="col-2 text-center">2</div>
+                      </div> 
+					  
+                    </div>
+            
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="itens" role="tabpanel" aria-labelledby="itens-tab">
+          <div class="containter">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <h2 class="card-header">Exoesqueleto</h2>
+                  <div class="card-body">
+                    <div class="card-text">
+                      <p>Suporte</p>
+                      <p>Inteligência +6</p>
+					  <p>Habilidade: Fala qualquer língua, analisa ambiente e se adapta pra lutar qualquer estilo. 1/5 turnos hackeia exoesqueleto.</p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <div class="card">
+                  <h2 class="card-header">Itens</h2>
+                  <div class="card-body">
+                    <ul>
+                      <li>Bastão (1d8 + for/2)</li>
+                      <li>Faca (1d6 + agi/2)</li>
+					  <li>Visor (Acerto fatal)</li>
+					  <li>Corrente com faca (1d10 + des/2)<li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+		  
+
+			<div class="row">
+				<div class="col-md-4">
+				 <div class="card">
+                  <h2 class="card-header">Informações</h2>
+                  <div class="card-body">
+                    <div class="card-text">
+                      <p>Carteira:</p>
+					  <p>Ganhos totais: 3k Soberanis</p>
+                      <p>Saldo atual: 980 Soberanis</p>
+					  <p>---------------------------</p>
+					  <p>Experiencia:</p>
+					  <p>Ganhos totais:3200 xp</p>
+					  <p>Saldo atual:1600 xp</p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <div class="card">
+                  <h2 class="card-header">Habilidades únicas</h2>
+                  <div class="card-body">
+                    <p><b>Hackear</b></p>
+					<p>Uma vez a cada cinco turnos hackeia um exoesqueleto inimigo se tirar +18d20.</p>
+                  </div>
+                </div>
+              </div>
+			</div>
+		  </div>
+		</div>
+
+        <div class="tab-pane fade" id="backstory" role="tabpanel" aria-labelledby="backstory-tab">
+          <h2 id="backstory-title">Backstory</h2>
+          <div id="backstory-content">
+
+            <p>Nascido nas favelas da cidade, desde jovem foi necessário que Marco aprendesse a se virar para conseguir sobreviver. Estudava bem e ganhava a vida com um amigo (elfo de luz) que tinha as mãos rápidas, o sonho deles era conhecer o mundo e os lugares mais exóticos dele. Logo ficaram conhecidos como grandes trapaceiros. Marco atraía e seu amigo dava o golpe. Teve que aprender a lutar e a fugir. É agitado e barulhento, especialmente quando bebe (tende ao alcoolismo, bebe desde novo). Em um golpe que deu errado, Marco e seu amigo foram pegos e separados, nunca mais se viram. Por representar tenaz resistência aos seus captores, Marco foi alistado à força e levado para ser treinado. No começo apresentou resistência, logo se tornou um grande aluno em todos os sentidos ¬¬— mesmo com o obstáculo da bebida. Através do seu treino, ganhou a alcunha de Gorila Serpente, pois era ágil, letal e forte. Em um campeonato, após Marco sair vitorioso, seu oponente o machuco permanentemente na perna direita. Ele supera o machucado e é escolhido pelo seu mestre para um treino intensivo no qual lhe foi ensinado o uso de armas, sendo as suas favoritas o bastão e a faca. Depois de alguns anos de treino, foi coagido a se juntar às operações especiais do Senhor Soberano, caso não o fizesse, seu mestre morreria. Antes de ir, seu metre o presenteia com o exoesqueleto que usava há anos. Nas operações especiais, Marco vive bêbado para aguentar o peso da responsabilidade das missões, mesmo assim continua um excelente soldado.</p>
+          </div>
+		  
+		  <h2 id="backstory-title">Diário do Marco</h2>
+		  <ul class="profile-ul">
+			<li>Primeiro dia:</li>
+			<br>
+			<li>* Não participei *</li>
+			<br>
+			<li>Sessão 2:</li>
+			<br>
+			<li>* Quinta tarde:</li>
+			<li>- Treinei artes marciais (exp)</li>
+			<li>- [Report ao Sr. Draco] 3 mil Soberanis pelo Report da missão ref sessao 1 </li>
+			<li>* Quinta a noite:</li>
+			<li>- Meditação (exp)</li>
+			<li>- Parei a meditação na metade e fui para o bar, presentimento;</li>
+			<li>- Iludido pelos infernais na treta do bar;</li>
+			<li>- Volta de noite e medita antes de dormir;</li>
+			<li>* Sexta:</li>
+			<li>- Baile festa draco filha - discussão de estratégia;</li>
+			<li>- Treinar com peso nas pernas (tarde);</li>
+			<li>- Missao do baile [FAILED]: Objetivo proteger a familia do Sr. Draco (Filho mais velho morreu)</li>
+			<li>- Bonus: Conseguimos contato com o Mercado Negro ao parar inimigos no predio suspeito</li>
+			<br>
+			<li>Ganhos gerais da sessão 2: </li>
+			<li>* 700 exp base + 200exp interpretação (900 total)</li>
+			<li>* 3 mil Soberanis</li>
+			<li>* Adquiriu habilidade Frenesi draconiana Lv 1 (custo 800 exp)</li>
+			<li>* Adquiriu Luvas [2d10 + for/2] (custo 2k Soberanis)</li>
+			<br>
+		</ul>
+        </div>
+      </div>
+  
+  
+  </div>
+
+<style>
+body {
+  background-color: rgba(130,100,160,0.5);
+}
+div {
+  background-color: rgba(130,100,160,0.5);; 
+}
+</style>
+  
+
+  <script src="app.js"></script>
+</body>
+</html>
